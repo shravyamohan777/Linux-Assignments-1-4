@@ -1,0 +1,140 @@
+Name : Shravya Mohan
+Class : 3A
+USN : ENG24CY0049
+
+
+LINUX PROGRAMMING ASSIGNMENT 2
+
+
+1)What do the commands pwd, whoami, and hostname display?
+
+ANS: 
+pwd: Prints the current working directory (where we are in the filesystem).
+whoami: Shows the username of the person currently logged in.
+hostname: Displays the name of the computer (the system’s network name).
+
+
+2) Write the command to create a directory named “project” inside the /home/student folder and keep three .txt file into it. Give output snapshot.
+
+ANS: 
+
+
+Or the files can be created using touch by being separated by space in one line.
+
+3) Explain the difference between absolute path and relative path with proper examples.
+ANS:
+Absolute PathRelative PathAbsolute path specifies the complete, unambiguous location of a file or folder from the root directory.Specifies the location of a file relative to the current working directory.Always starts with a forward slash (/ on Linux/macOS) or a drive letter (like C:\ on Windows).Does not start with a root indicator (/ or C:\). Provides the full address regardless of current working directory.
+Gives directions from your current location.
+Examples:
+? Linux/macOS: /home/username/Documents/report.txt
+
+? Windows: C:\Users\Username\Pictures\photo.jpg
+Examples (if current directory is /home/username/Documents):
+? ./project/plan.txt ? File inside a subfolder of the current directory
+
+4) What command will give you the already executed command traces in the terminal. Give output snapshot.
+ANS: History 
+
+
+
+
+5) Compare the working functionality of find and locate command. Which one is faster and why?
+ANS:
+ Method:
+
+? find searches in real-time by scanning directories.
+
+? locate searches using a pre-built database of files.
+
+2. Speed:
+
+? find is slower because it checks the filesystem on the spot.
+
+? locate is faster because it looks up an indexed database.
+
+3. Accuracy:
+
+? find always shows up to date results, including newly created files.
+
+? locate may miss recent files if the database has not been updated.
+
+4. Search Options:
+
+? find can filter by name, type, size, permissions, owner, modification date, etc.
+
+? locate mainly searches by file name or path. Less flexible.
+
+
+
+5. Which is faster and why
+
+? locate is faster because it searches an indexed database rather than scanning the filesystem in rea time.
+
+
+6) Which command is used to modify file permissions in Linux? Give an example. 
+ANS:
+chmod 
+chmod 755 filename
+
+
+7) A file has permissions -rw -r- -r- -. What does this mean?
+ANS: 
+-rw-r--r--:
+1. First character (-):
+
+? Indicates the type of file.
+
+? - means it is a regular file (not a directory or special file).
+
+2. Next three characters (rw-):
+
+? Represent permissions for the owner of the file.
+
+? r ? read permission
+
+? w ? write permission
+
+? - ? no execute permission
+
+? So, the owner can read and write the file but cannot execute it.
+
+3. Next three characters (r--):
+
+? Represent permissions for the group.
+
+? r ? read permission
+
+? - ? no write permission
+
+? - ? no execute permission
+
+? So, group members can only read the file.
+
+4. Last three characters (r--):
+
+? Represent permissions for others (everyone else).
+
+? r ? read permission
+
+? - ? no write permission
+
+? - ? no execute permission
+
+? So, others can only read the file.
+
+
+8) Explain the difference between chown and chgrp with an example.  
+ANS:
+chownchgrpChanges the owner of a file or directoryChanges the group associated with a file or directorySpecifies the new user and the file.Specifies the new group and the file.It is used to change the ownership of file.It is used to change the file group.Example: Example:
+9) A file needs to be accessible by multiple users but only writable by the owner. How will you set permissions?
+ANS: 
+chmod 644 filename
+Owner: read and write
+Group and Others: read only
+
+
+10) How do you check the manual page for any Linux commands?
+ANS: man command_name
+Example: man ls
+
+

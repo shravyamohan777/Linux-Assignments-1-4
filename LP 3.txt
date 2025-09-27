@@ -1,0 +1,118 @@
+Name : Shravya Mohan
+Class : 3A
+USN : ENG24CY0049
+
+
+LINUX PROGRAMMING ASSIGNMENT 3
+
+
+1)Distinguish between man and whatis commands? Justify with proper example.
+
+ANS: Man command (Manual): This is our go to for comprehensive documentation. When we type man ls, it opens a full, detailed guide explaining every single option, the syntax, and examples of how to use the ls command. We have to scroll through it to find what we need.
+
+Whatis command: This gives you a one line, short description. It is perfect for when we forgot what a command basically does or when we are quickly scanning through similar-sounding commands.
+
+Example uses: 
+man ls
+
+whatis ls
+
+ 
+
+2) Use the tee command to save the output of ls -l into a file while also displaying it.
+
+ANS:
+ 
+
+
+3) Explain with an example how the tee command can be used in logging.
+
+ANS: 
+ping -c 5 google.com | tee pinglog.txt
+This sends 5 ICMP echo requests to google.com, shows the output live, and logs it into pinglog.txt for future reference or debugging.
+
+
+
+4) List the steps involved in installing Ubuntu 25.04 LTS on Oracle VirtualBox.
+ANS: 
+1. Download Ubuntu ISO: Get Ubuntu 25.04 LTS ISO from the official Ubuntu website.
+2. Install VirtualBox: Download and install Oracle VirtualBox.
+3. Create New VM:
+o Click New
+o Name: Ubuntu2504
+o Type: Linux
+o Version: Ubuntu (64-bit)
+4. Assign Resources:
+o RAM: Minimum 2048 MB
+o CPU: At least 2 cores
+o Hard disk: Create a virtual hard disk (VDI), 20GB or more
+5. Mount ISO:
+o Go to Settings > Storage ? Mount the downloaded ISO file as Optical Drive.
+6. Start VM:
+o Boot from ISO and start the Ubuntu installation.
+7. Install Ubuntu:
+o Follow on-screen instructions: select language, keyboard, partitions, user setup.
+8. Post-Install:
+o Eject ISO
+o Reboot VM
+o Install Guest Additions for better performance (optional)
+
+5) During Ubuntu OS installation, you face a Kernel Panic Error. How would you troubleshoot it?
+ANS: 
+1. Check ISO Integrity:
+o Verify checksum (SHA256) of the downloaded ISO.
+2. Recreate Bootable ISO (if using USB):
+o Use tools like Rufus or Balena Etcher.
+3. Ensure Enough RAM & Disk Space:
+o Allocate at least 2 GB RAM and 20 GB disk.
+4. Disable Secure Boot/EFI in VM Settings
+5. Use Safe Graphics Mode:
+o Choose “Install Ubuntu (safe graphics)” from boot menu.
+6. Check VirtualBox Version:
+o Use the latest version. Outdated versions may not support new kernels.
+
+
+6) Write the command to display the system’s hostname? How to change hostname using sysctl command?
+ANS: 
+Display hostname:
+
+
+Change hostname using sysctl:
+sudo sysctl kernel.hostname=new-hostname
+(This change is temporary and resets after reboot)
+
+For permanent change, modify:
+sudo nano /etc/hostname
+sudo nano /etc/hosts
+Then reboot.
+
+
+7) Which command is used to show the calendar of the year 1984 with August month?
+ANS: 
+
+
+
+8) Write a command to display system uptime and logged-in users together
+ANS:
+One of these:
+
+
+
+
+
+9) Use the find command to list all “.c” files in /home/user. 
+
+ANS: 
+find /home/user -type f -name '*.c'
+
+BUT 
+If no .c files,
+
+
+
+10) How do you change file permissions to allow only the owner to read and write?
+ANS: 
+chmod 600 filename
+
+This sets permissions to:
+Owner: read and write, Group: none, Others: none

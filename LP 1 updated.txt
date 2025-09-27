@@ -1,0 +1,150 @@
+Name : Shravya Mohan
+Class : 3A
+USN : ENG24CY0049
+ 
+LINUX PROGRAMING ASSIGNMENT 1
+ 
+1) What is Linux Operating System (OS)? List three pros and cons of it.
+
+ANS:  Linux is a type of OS (Operating System : An operating system is the main software that runs a computer. It manages the memory, processor, and all the other parts. To summarise, it is the link between software and hardware) that is open source, which means its original code is free for anyone to use for any purpose, be it commercial or personal purposes. So, Linux usually means a complete package that includes the kernel (core) and other programs like a web browser and office tools. These packages are known as distributions like Ubuntu.
+
+
+ProsConsFree and Open: We do not have to pay for it. Because the code is open, many people can check it for problems, making it secure and reliable.
+Can Be Hard to Learn: For people used to Windows or Mac, Linux can feel different and a bit difficult at first, especially the command line.
+
+Very Stable: Linux rarely crashes. Computers running Linux can stay on for a very long time without needing to be restarted. This makes it great for servers.
+Not All Popular Software Works: We cannot directly run some popular programs like Microsoft Office or Adobe Photoshop. We have to use alternatives.Very Secure: It has a strong security system. It is also not a common target for viruses compared to other operating systems.Sometimes Hardware Doesn't Work: While most hardware is supported, some specific printers or gadgets might not have drivers made for Linux.
+
+	
+
+
+
+2)Differentiate between Linux, Mac, Android, and Windows OS with at least six unique features.
+ANS:
+
+Linux MacOSAndroidWindowsLinux is open source, so anyone can contribute or customise it.MacOS is closed source and tightly linked to Apple hardware.Android is built on a modified Linux kernel.Windows is a closed source OS designed for wide hardware compatibilityIt runs on the Linux monolithic kernel.It uses the XNU hybrid kernel (mix of Mach and BSD).It is open source at its core (AOSP), but customised by manufacturers.It uses the Windows NT hybrid kernel.
+
+Popular among developers, system admins, and server users.Known for its seamless experience.Designed mainly for mobile devices like smartphones and tablets.Most common among general users, businesses, and gamers.Programs are installed through package managers (like apt)Apps come from the Mac App Store or .dmg downloads.Apps are installed via the Google Play Store or sideloaded APKs.Software is installed through .exe, .msi, or the Microsoft StoreThe default shell is Bash, but you can switch to others.The default shell is Zsh (previously Bash).Mostly app based, though a Unix shell exists for advanced users.Comes with PowerShell and Command Prompt as command-line tools.
+
+Uses a unified file system with folders like /home, /etc, /bin.Built on a Unix-like structure, but much of it is hidden by the GUI.Uses a sandboxed file system for security.Uses drive letters like C: and D: instead of a unified hierarchy.
+
+Free of cost.
+Not free because users pay for it through Apple devices.
+The OS itself is free, but you pay for the device.Requires a paid license, though it’s often pre installed on PCs.
+
+
+
+
+3)Why is Linux preferred for Mainframe Servers for legacy application? Give three out-of-the-box technical reasons.
+
+ANS: Legacy applications are often focused on mission and need to run unchanged for decades. Linux is the perfect fit for this job for a lot of technical reasons, some of them are:
+
+? Unmatched Stability and Uptime: The Linux kernel is engineered for long term, uninterrupted operation. For a mainframe server running a legacy banking or airline reservation system, even a few minutes of downtime can cost millions. Linux's proven reliability ensures these applications stay running for years.
+? Superb Backward Compatibility: Linux distributions are exceptionally good at ensuring that old software continues to run on new kernels and hardware. We can take a legacy application compiled decades ago on an older Linux system and run it on a modern server without any changes. So the need for costly and risky applications is not there.
+? Extreme Customization and Right-Sizing: Because it is open source, system administrators can strip the Linux installation down to only the kernel and the exact services needed for the legacy app. This directly means no attack surface for security threats, minimizes resource usage, and improves performance, which is important for maximizing the return on investment (ROI) on expensive mainframe hardware.
+
+
+4) Explain the structure of the Linux File System with proper diagram. Note: you can use the tree command to find it out.
+
+ANS: Linux file system is a tree like structure where everything starts from the root directory (It is like an upside down tree where the root is the trunk, and all other directories are branches. So we use tree command). 
+
+Using man command:
+Tree is a recursive directory listing program that produces a depth  indented listing of files, which is colorized ala dircolors if the LS_COLORS  environment  variable  is  set and output is to tty.  With no arguments, tree lists the files in the current  directory.   When  directory arguments  are  given, tree lists all the files and/or directories found in the given directories each in turn.  Upon completion of  listing  all
+files/directories  found,  tree returns the total number of files and/or directories listed.
+
+
+
+
+
+
+5) If Linux OS is open-source, how do companies like Red Hat still making money from it? Do a market study and answer properly.
+
+ANS: This is a classic and brilliant business model. Red Hat (now part of IBM) does not sell the Linux software itself. Instead, they sell value added services and guarantees that businesses are willing to pay for.
+
+Enterprise Grade Support: This is the biggest revenue stream. Large corporations running critical systems do not want to rely on community forums if their server crashes at 3 AM. They pay Red Hat for 24/7 technical support, with service-level agreements (SLAs) guaranteeing a response time from expert engineers.
+
+Certification and Security: Red Hat certifies its distribution (RHEL - Red Hat Enterprise Linux) to work wiithout flaws with specific hardware (from IBM, Dell, HPE) and enterprise software (like Oracle, SAP). Businesses pay for this certified and stable platform. Red Hat also provides timely security patches, backported to older versions, so companies don't have to upgrade their entire OS to stay secure.
+
+Training and Consulting: They offer official training courses, certifications (like RHCE - Red Hat Certified Engineer), and consulting services to help companies design, deploy, and manage their Linux infrastructure effectively.
+
+In short, they give the code away for free but sell the reliability, security, and expert help that big businesses need.
+
+
+6) Write the command to display today’s date and time (i.e., current System time)
+
+ANS: The “date” command is used to display the date and time of the system.
+
+
+
+This command can also also be used to show another day’s date and time:
+
+
+Practical cases where we use the date command: converting between time zonea, logging and timestamps in scripts.
+ 
+
+
+7) Which command is used to check how long the system has been running? 
+
+ANS: “Uptime” command shows the following:
+? How long the system has been running since the last reboot 
+? Current time
+? Number of users currently logged in
+? System load averages
+
+
+
+
+
+
+8) What is the difference between shutdown -h now and halt?
+
+ANS: 
+Shutdown -hHalt The main goal is system safety. It is a controlled, polite procedure. It notifies all users, gracefully stops running services and processes and unmounts filesystems before telling the hardware to power off. The primary goal is to stop the CPU. More direct and abrupt command. While modern versions of halt try to do a safe shutdown, its traditional behavior is to stop system operations much faster, with less concern for graceful service termination.A key feature is that it broadcasts a warning message to all logged-in users. This gives them a chance to save their work before the system goes down. It does not normally send any warning to users. The system just stops, which can be disruptive if people are actively working.It uses a systematic process to gracefully stop services. It sends SIGTERM signals, giving processes time to finish their current tasks and shut down cleanly. If a process ignores the signal, it is followed by a SIGKILL to force it to stop.The process is more brute-force. It performs a “killall” command, which is less graceful and can lead to data corruption for applications that were not designed to handle such an abrupt stop.The -h flag instructs the system to power down the hardware completely after the software shutdown is complete. On modern systems, this usually means the machine will turn itself off (ACPI poweroff).Traditionally, the halt command would stop the CPU but leave the power running, leaving the user at a bootloader prompt or with the system which shows a "System halted." message. But on most modern Linux distributions, the halt command acts like shutdown -h and will actually power off the machine.
+
+
+
+9) Compare init 0 and shutdown -h. Which is safer? Why?
+ANS: shutdown -h is the safer command.
+
+The difference is in their approach: one is a polite, systematic manager, and the other is an immediate directive.
+
+? The process of shutting down
+
+shutdown -h performs a step-by-step shutdown. It first sends a warning to all users, then politely asks all running services and processes to stop (using SIGTERM signals), waits for them to close files and finish tasks, cleanly unmounts filesystems, and only then tells the kernel to power off the hardware. It manages the entire sequence itself.
+
+init 0 is a command that changes the system's runlevel to 0, which is defined as halt. This action triggers a set of scripts to stop services. However, it is generally more direct and is an instruction to switch to a halt state immediately.
+
+? User notification
+
+shutdown -h is designed with multi-user systems in mind. A key feature is that it broadcasts a message to all logged-in users, giving them time to save their work before the system goes down.
+
+init 0 typically does not send a warning message to users. The shutdown process begins immediately, which can be disruptive and cause data loss for anyone actively working on the server.
+
+? Flexibility and control
+
+shutdown -h gives the administrator more control. You can schedule the shutdown for a future time (e.g., shutdown -h 23:00) or cancel a pending shutdown (shutdown -c). This flexibility is part of its safety-oriented design.
+
+init 0 is an immediate command. Once executed, the process begins without an option for a scheduled delay or easy cancellation.
+
+
+10) A system administrator accidentally powers off a Server machine without shutting it down properly. What problems can occur to the said Server? 
+
+ANS: When a system administrator powers off a server without performing a proper shutdown, it is like pulling a plug. The server will be cut off mid operation, which can lead to several serious problems.
+1. Data Corruption and Loss
+This is the most immediate and severe risk. Any information stored in the computer's RAM that has not yet been permanently written to the hard drive is lost instantly. This can include:
+
+? Unsaved documents that users were editing.
+
+? Database corruption if a transaction was in progress, leaving data files in an inconsistent state.
+? File system corruption, as the operating system may have been updating file structures. An abrupt stop can leave the file system inconsistent, leading to lost files or an unreadable disk.
+
+2. Operating System Damage
+ A sudden interruption can corrupt critical operating system files. The server might fail to boot correctly the next time, displaying errors or entering emergency recovery mode. Repairing this often requires time consuming recovery from a backup or a rescue disk.
+
+3. Application and Service Failure
+ Applications and services, such as web servers, email servers, or databases, are not given the opportunity to shut down cleanly. If they were writing to configuration files, logs, or temporary files, they could become unstable and fail to start correctly when the server is turned on again.
+
+4. Hardware Risk 
+In very rare cases, sudden power loss during a write operation can physically damage storage devices, especially older mechanical hard drives where the read/write head could crash onto the platters.
+
+

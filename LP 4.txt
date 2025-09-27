@@ -1,0 +1,108 @@
+Name : Shravya Mohan
+Class : 3A
+USN : ENG24CY0049
+
+
+LINUX PROGRAMMING ASSIGNMENT 4
+
+
+1)A system has a file /etc/passwd. How would you use grep + tee to extract usernames and save them to a file while also displaying them on screen?
+
+ANS: The structure of /etc/passwd: 
+
+The /etc/passwd file stores user account information. Each line represents a user and is divided into seven colon separated fields. 
+Like this
+username:x:UID:GID:comment:home_directory:shell
+
+For example:
+john:x:1001:1001:John Doe:/home/john:/bin/bash
+
+The first field before the first colon (:) is the username. So, to extract only the usernames from this file, we need a way to get just that first field from every line.
+
+Using cut or grep to extract usernames:
+You can use the cut command to extract the first field like this:
+cut -d: -f1 /etc/passwd
+
+? -d tells cut to use the colon (:) as the field separator.
+
+? -f1 tells it to select the first field, which is the username.
+
+
+Using tee to save and display output:
+Now, if you want to both see the usernames on the screen and save them to a file, you can use the tee command:
+cut -d: -f1 /etc/passwd | tee usernames.txt
+
+? tee usernames.txt takes the output from cut, writes it to usernames.txt, and passes it through to the screen.
+
+? This is helpful when you want to verify the output visually while also saving it for future use.
+
+cut -d: -f1 /etc/passwd | tee usernames.txt
+
+This command gets all usernames from the system, displays them on the screen, and saves them to a file, all in one step.
+
+2. A binary isn’t found in $PATH. How would you use commands (which, find, locate) to troubleshoot and fix the issue? 
+
+ANS: Check if the binary is in the PATH: 
+which binary_name
+ If it returns nothing, it is not in our $PATH.
+
+? Search for it using find:
+sudo find / -type f -name binary_name 2>/dev/null
+
+? Or use locate:
+locate binary_name
+
+? Fix:
+ Once found, either add its location to your $PATH or move it to a standard bin directory like /usr/bin
+
+
+3) Write a command pipeline that finds all .log files modified in the last 24 hours in /var/log and saves results into log_report.txt.
+ANS: find /var/log -name "*.log" -mtime -1 > log_report.txt
+
+Here 
+-mtime -1: Finds files modified in the last 24 hours.
+
+> log_report.txt: Saves the results to the file.
+
+
+4) What is the difference between shutdown -r now and reboot?
+
+ANS: The shutdown -r now command safely reboots the system, it stops all running processes and services gracefully, while reboot restarts the system more abruptly, without going through the full shutdown process in some cases.
+
+? shutdown -r now sends a warning message to all logged in users before restarting the system, which is useful on multi user systems. On the other hand, reboot does not notify users by default.
+
+? The shutdown command allows scheduling a reboot at a later time, such as shutdown -r +10 to reboot in 10 minutes, whereas reboot executes the restart immediately without any scheduling options.
+
+
+5) ./your_script.sh 2>&1 | tee debug_log.txt
+2>&1: Merges error messages with standard output.
+tee debug_log.txt: Saves all output (including errors) to a file and shows it on screen.
+Useful when you want to monitor your script. Also to keep a log.
+
+
+6) Web Servers: Most websites run on Linux using Apache or Nginx (Google, Facebook).
+
+Cloud Computing: Linux powers cloud platforms like AWS, Azure, and Google Cloud.
+
+Embedded Systems: Devices like smart TVs, routers, and automotive systems often run Linux.
+
+
+7) 
+TypeDescriptionExampleApplicationUsed by users for specific tasksFirefox, LibreOfficeSystem SoftwareManages hardware and core functionsLinux Kernel, SystemdUtility SoftwareHelps maintain or manage the systemtop, df, ls, cron
+
+8) 
+FeatureOpen-Source OS (e.g., Linux)Proprietary OS (e.g., Windows)Source CodePublic and editableClosed and protectedCostUsually freeUsually paidCustomizationHighly customizableLimited customizationCommunity SupportCommunity-drivenVendor-driven
+
+9) 
+ 
+This shows the current version of the Linux kernel running on a person’s system.
+
+
+
+10) The head command is used to display the first few lines of a file, by default showing the first 10 lines, 
+While the tail command shows the last few lines, also defaulting to 10 lines.
+
+head is typically used to preview the beginning of large files such as configuration files or scripts, whereas tail is useful for monitoring the end of files, such as checking the latest entries in a log file.
+
+The tail command has a special option -f (follow), which allows real time monitoring of file updates commonly used for watching log files as they grow, but head does not support real time file monitoring.
+
